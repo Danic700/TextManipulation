@@ -4,19 +4,23 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ManipulationUtil {
+public final class ManipulationUtil {
+
+    private ManipulationUtil() {
+    }
 
     public static List<String> readLinesFromFile(String inputFile) throws IOException {
-        List<String> lines = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))) {
+            List<String> lines = new ArrayList<>();
             String line;
             while ((line = reader.readLine()) != null) {
                 lines.add(line);
             }
+            return lines;
         } catch (IOException e) {
             throw new IOException("Failed to read from input file: " + inputFile, e);
         }
-        return lines;
+
     }
 
     public static void writeLinesToFile(String outputFile, List<String> lines) throws IOException {

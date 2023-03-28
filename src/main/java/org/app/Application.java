@@ -1,5 +1,7 @@
 package org.app;
 
+import org.app.actions.ReverseAction;
+import org.infra.InputValidator;
 import org.infra.ManipulationAction;
 import org.infra.ManipulationFactory;
 
@@ -8,17 +10,19 @@ import java.io.IOException;
 public class Application {
 
     public static void main(String[] args) throws IOException {
-        if (args.length != 3) {
-            System.out.println("Please input the 3 proper input arguments");
-            System.exit(1);
-        }
-        String inputFile = args[0];
-        String outputFile = args[1];
-        String actionName = args[2];
+        InputValidator.validateInputs(args);
+        final String inputFile = args[0];
+        final String outputFile = args[1];
+        final String actionName = args[2];
 
         ManipulationAction manipulationAction = ManipulationFactory.getActionByName(actionName);
-
         manipulationAction.manipulate(inputFile, outputFile);
+
+        //We can add actions to the factory on the fly during runtime of application if needed
+        ManipulationFactory.register("reverse", new ReverseAction());
+        manipulationAction = ManipulationFactory.getActionByName("reverse");
+        manipulationAction.manipulate(inputFile, outputFile);
+
 
     }
 
