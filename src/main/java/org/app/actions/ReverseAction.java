@@ -3,8 +3,8 @@ package org.app.actions;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
-import org.infra.actions.ManipulationAction;
-import org.infra.actions.ManipulationUtil;
+import org.infra.ManipulationAction;
+import org.infra.ManipulationUtil;
 
 public class ReverseAction implements ManipulationAction {
 

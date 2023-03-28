@@ -1,4 +1,4 @@
-package org.infra.actions;
+package org.infra;
 
 import org.app.actions.ReverseAction;
 import org.app.actions.ShuffleAction;

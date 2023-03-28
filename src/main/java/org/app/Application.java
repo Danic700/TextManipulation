@@ -1,7 +1,7 @@
 package org.app;
 
-import org.infra.actions.ManipulationAction;
-import org.infra.actions.ManipulationFactory;
+import org.infra.ManipulationAction;
+import org.infra.ManipulationFactory;
 
 import java.io.IOException;
 

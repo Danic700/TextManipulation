@@ -1,7 +1,7 @@
 package org.app.actions;
 
-import org.infra.actions.ManipulationAction;
-import org.infra.actions.ManipulationUtil;
+import org.infra.ManipulationAction;
+import org.infra.ManipulationUtil;
 
 import java.io.IOException;
 import java.util.Collections;

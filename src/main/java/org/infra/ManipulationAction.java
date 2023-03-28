@@ -1,4 +1,4 @@
-package org.infra.actions;
+package org.infra;
 
 import java.io.IOException;
 

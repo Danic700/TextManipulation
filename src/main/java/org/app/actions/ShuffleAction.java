@@ -1,7 +1,7 @@
 package org.app.actions;
 
-import org.infra.actions.ManipulationAction;
-import org.infra.actions.ManipulationUtil;
+import org.infra.ManipulationAction;
+import org.infra.ManipulationUtil;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,7 +12,6 @@ public class ShuffleAction implements ManipulationAction {
     @Override
     public void manipulate(String inputFile, String outputFile) throws IOException {
         List<String> lines = ManipulationUtil.readLinesFromFile(inputFile);
-        //Collections.shuffle(lines);
         shuffleList(lines);
         ManipulationUtil.writeLinesToFile(outputFile, lines);
 
