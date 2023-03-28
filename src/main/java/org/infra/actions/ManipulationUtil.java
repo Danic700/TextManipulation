@@ -1,29 +1,10 @@
 package org.infra.actions;
 
-import org.app.actions.ReverseAction;
-import org.app.actions.ShuffleAction;
-import org.app.actions.SortAction;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class ManipulationUtil {
-
-    private static final Map<String, ManipulationAction> actionMap = Map.of(
-            "reverse", new ReverseAction(),
-            "shuffle", new ShuffleAction(),
-            "sort", new SortAction()
-    );
-
-    public static ManipulationAction getActionByName(String actionName) {
-        ManipulationAction action = actionMap.get(actionName.toLowerCase());
-        if (action == null) {
-            throw new IllegalArgumentException("Invalid action: " + actionName);
-        }
-        return action;
-    }
 
     public static List<String> readLinesFromFile(String inputFile) throws IOException {
         List<String> lines = new ArrayList<>();
